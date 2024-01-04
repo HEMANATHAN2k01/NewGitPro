@@ -1,15 +1,28 @@
-import React from "react";
-import { UseEffect } from "./state/UseEffect";
-// import { Parent } from "./props/Parent";
-// import { UseState } from "./state/UseState";
+  import React from "react";
+  import Navbar from "./Nav/Navbar";
+  import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+  import DashBoard from "./screens/DashBoard";
+  import Dummy from "./screens/dummy";
+import Form from "./screens/Form";
 
 
-function App() {
-  return <div>
-    {/* <UseState /> */}
-    {/* <Parent /> */}
-    <UseEffect />
-  </div>;
-}
+  function App() {
+    return (
+      <div>
+        {/* <BrowserRouter> */}
+        <Router>
+          <Routes>
+            <Route path="/" element={<DashBoard />} />    
+              <Route path="/dummy" element={<Dummy />} />
+              <Route path="/form" element={<Form />} />
+              <Route path="" element="" />
+              <Route path="" element="" />
+          </Routes>
+        </Router>
 
-export default App;
+        {/* </BrowserRouter> */}
+      </div>
+    )
+  }
+
+  export default App;
